@@ -1,0 +1,19 @@
+# Ignore system files
+AppData/
+node_modules/
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+/local
+
+Application Data/
+Cookies/
+Local Settings/
+My Documents/
+NetHood/
+PrintHood/
+Recent/
+SendTo/
+Start Menu/
+Templates/

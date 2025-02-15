@@ -1,0 +1,18 @@
+<div class="cart-container">
+  <mat-card class="cart-card">
+    <mat-card-title class="cart-title">Your Cart</mat-card-title>
+    <mat-card-content>
+      <mat-list>
+        <mat-list-item *ngFor="let item of cartItems" class="cart-item">
+          <div class="item-details">
+            <h3 mat-line class="product-name">{{ item.productName }}</h3>
+            <p mat-line class="product-price">{{ item.price | currency }}</p>
+          </div>
+          <button mat-raised-button color="warn" (click)="deleteItem(item._id)" class="delete-button">
+            Delete
+          </button>
+        </mat-list-item>
+      </mat-list>
+    </mat-card-content>
+  </mat-card>
+</div>

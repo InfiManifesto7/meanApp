@@ -1,0 +1,55 @@
+<header>
+  <nav>
+      <a routerLink="/" class="logo">
+          <img src="./assets/Gemini_Generated_Image_xbdn0bxbdn0bxbdn.jpg" alt="Shreya's Shoppy Logo">  Shreya's Shoppy 
+      </a>
+      <ul>
+          
+          <li><a routerLink="/product">Products</a></li>
+          <li><a routerLink="/cart">Cart</a></li>
+          <li *ngIf="isAdmin"><a routerLink="/admin">Admin</a></li>
+          <li *ngIf="!isLoggedIn"><a routerLink="/login">Login</a></li>
+          <li *ngIf="!isLoggedIn"><a routerLink="/signup">Signup</a></li>
+          <li *ngIf="isLoggedIn"><a routerLink="/profile">Profile</a></li>
+      </ul>
+  </nav>
+  <div class="hero">
+      <div class="hero-content">  
+          <h1>Welcome to Shreya's Shoppy</h1>
+          <p>Discover the best products.</p>
+          <button routerLink="/products">Shop Now</button>
+      </div>
+      <div class="hero-image">  
+          <img src="../assets/background.jpg" alt="Hero Image">
+      </div>
+  </div>
+</header>
+
+<main>
+  <section class="featured-products">
+      <h2>Featured Products</h2>
+      <div class="product-grid">
+          <div *ngFor="let product of products" class="product">
+              <img [src]="product.image" alt="{{ product.name }}">
+              <h3>{{ product.name }}</h3>
+              <p class="price">₹{{ product.price }}</p>
+              <button (click)="addToCart(product)">Add to Cart</button>
+          </div>
+      </div>
+      <div class="view-all">  
+          <button routerLink="/products">View All Products</button>
+      </div>
+  </section>
+
+  <section class="about-us">
+    <h2>About Us</h2>
+    <p>Discover a world of shopping at your fingertips. Browse millions of products, find exclusive deals, and enjoy seamless checkout with our easy-to-use app</p>
+    <p>From everyday essentials to the latest must-haves, we've got you covered. Shop your favorite brands, compare prices, and track your orders with ease. Download now and experience shopping like never before. </p>
+  </section>
+</main>
+
+<footer>
+  <p>&copy; 2025 Shreya's Shoppy. All rights reserved.</p>
+</footer>
+
+<router-outlet></router-outlet>
